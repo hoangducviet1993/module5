@@ -4,10 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArticleComponent } from './article/article.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LikeComponent } from './like/like.component';
 import { NameCardComponent } from './name-card/name-card.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { DemoFormComponent } from './demo-form/demo-form.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,14 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
     ArticleComponent,
     LikeComponent,
     NameCardComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    DemoFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
