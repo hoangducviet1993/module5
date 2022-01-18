@@ -23,7 +23,8 @@ export class ProductCreateComponent implements OnInit {
 
   submit() {
     const product = this.productForm.value;
-    this.productService.saveProduct(product);
+    console.log(product)
+    this.productService.saveProduct({product: product});
     this.productForm.reset();
   }
 }
