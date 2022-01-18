@@ -5,29 +5,76 @@
   Email:
   <br>
   <input type="text" formControlName="email">
-  <div *ngIf="user&& user.invalid && user.dirty ">
-    <span> Email không hợp lệ</span>
-  </div>
+<!--  <div *ngIf="user&& user.invalid && user.dirty ">-->
+<!--    <span> Email không hợp lệ</span>-->
+<!--  </div>-->
+    <div style="color: red"
+         *ngIf="formUser.controls['email'].errors?.['required']
+         &&formUser.controls['email'].touched">
+      <p>Email không được để trống</p>
+    </div>
+    <div style="color: red"
+         *ngIf="formUser.controls['email'].errors?.['email']
+         &&formUser.controls['email'].touched">
+      Email không hợp lệ
+    </div>
   <br>
   Password:
   <br>
   <input type="password" formControlName="password">
+  <div style="color: red"
+       *ngIf="formUser.controls['password'].errors?.['required']
+         &&formUser.controls['password'].touched">
+    Password không được để trống
+  </div>
   <br>
   Country:
   <br>
-  <input type="text" formControlName="country">
+  <select type="text" formControlName="country">
+  <option [value]="'Việt Nam'" selected="selected">Việt Nam</option>
+  <option [value]="'China'">China</option>
+  <option [value]="'Japan'">Japan</option>
+  </select>
+  <div style="color: red"
+       *ngIf="formUser.controls['country'].errors?.['required']
+         &&formUser.controls['country'].touched">
+    Password không được để trống
+  </div>
   <br>
   Age:
   <br>
   <input type="number" formControlName="age">
+  <div style="color: red"
+       *ngIf="formUser.controls['age'].errors?.['required']
+         && formUser.controls['age'].touched">
+    Age không để trống
+  </div>
+  <div style="color: red"
+       *ngIf="formUser.controls['age'].errors?.['min']
+         && formUser.controls['age'].touched">
+    Age lớn hơn 16!
+  </div>
   <br>
   Gender:
   <br>
-  <input type="text" formControlName="gender">
+  <input type="radio" id="male" formControlName="gender" value="Male">
+  <label for="male">Male</label>
+  <input type="radio" id="female" formControlName="gender" value="Female">
+  <label for="male">Female</label><br>
+  <div style="color: red"
+       *ngIf="formUser.controls['gender'].errors?.['required']
+         &&formUser.controls['gender'].touched">
+    Gender không được để trống
+  </div>
   <br>
   Phone:
   <br>
   <input type="number" formControlName="phone">
+  <div style="color: red"
+       *ngIf="formUser.controls['phone'].errors?.['pattern']
+         && formUser.controls['phone'].touched">
+    Invalid Phone Number
+  </div>
   <br>
 
   <button [disabled]="formUser.invalid" >Submit</button>
