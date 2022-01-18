@@ -14,8 +14,8 @@ import { UserComponent } from './component/user/user.component';
 import { TimelinesComponent } from './component/timelines/timelines.component';
 import { YoutubePlaylistComponent } from './component/youtube-playlist/youtube-playlist.component';
 import { YoutubePlayerComponent } from './component/youtube-player/youtube-player.component';
-import { ProductServiceComponent } from './component/product-service/product-service.component';
 import { ProductLisComponent } from './product/product-lis/product-lis.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +30,8 @@ import { ProductLisComponent } from './product/product-lis/product-lis.component
     TimelinesComponent,
     YoutubePlaylistComponent,
     YoutubePlayerComponent,
-    ProductServiceComponent,
-    ProductLisComponent
+    ProductLisComponent,
+    ProductCreateComponent
   ],
   imports: [
     BrowserModule,

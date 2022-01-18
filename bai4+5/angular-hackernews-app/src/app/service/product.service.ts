@@ -35,4 +35,7 @@ export class ProductService {
   getAll() {
     return this.products;
   }
+  saveProduct({product}: { product: any }) {
+    this.products.push(product);
+  }
 }
