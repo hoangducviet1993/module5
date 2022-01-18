@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {TimelinesComponent} from "./component/timelines/timelines.component";
 import {YoutubePlaylistComponent} from "./component/youtube-playlist/youtube-playlist.component";
+import {YoutubePlayerComponent} from "./component/youtube-player/youtube-player.component";
 
 const routes: Routes = [
   {
@@ -10,7 +11,11 @@ const routes: Routes = [
   },
   {
     path: 'youtube',
-    component: YoutubePlaylistComponent
+    component: YoutubePlaylistComponent,
+    children:[{
+      path:':id',
+      component:YoutubePlayerComponent
+    }]
   }
 ];
 

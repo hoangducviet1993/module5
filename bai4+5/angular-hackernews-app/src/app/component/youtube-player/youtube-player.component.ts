@@ -24,5 +24,9 @@ export class YoutubePlayerComponent implements OnInit {
     this.song = this.songService.findSongById(id);
   });
   }
+  getSrc() {
+    const url = 'https://www.youtube.com/embed/' + this.song.id;
+    return this.domSanitizer.bypassSecurityTrustResourceUrl(url);
+  }
 
 }

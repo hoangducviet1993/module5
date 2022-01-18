@@ -28,7 +28,8 @@ export class SongService {
     }
   ];
   constructor() { }
-  findSongById(id: string) {
+
+  findSongById(id: string | null) {
     return this.playlist.find(item => item.id === id);
   }
 }
