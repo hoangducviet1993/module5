@@ -13,6 +13,8 @@ import { ProductComponent } from './component/product/product.component';
 import { TodoComponent } from './component/todo/todo.component';
 import { UserComponent } from './component/user/user.component';
 import { TimelinesComponent } from './component/timelines/timelines.component';
+import { YoutubePlaylistComponent } from './component/youtube-playlist/youtube-playlist.component';
+import { YoutubePlayerComponent } from './component/youtube-player/youtube-player.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { TimelinesComponent } from './component/timelines/timelines.component';
     ProductComponent,
     TodoComponent,
     UserComponent,
-    TimelinesComponent
+    TimelinesComponent,
+    YoutubePlaylistComponent,
+    YoutubePlayerComponent
   ],
   imports: [
     BrowserModule,
