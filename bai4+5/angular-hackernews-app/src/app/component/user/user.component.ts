@@ -19,7 +19,7 @@ export class UserComponent implements OnInit {
 
   })
 
-  get user() {
+  get error() {
     return this.formUser.get('email')
   }
 
