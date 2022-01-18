@@ -12,6 +12,7 @@ import { DemoFormComponent } from './component/demo-form/demo-form.component';
 import { ProductComponent } from './component/product/product.component';
 import { TodoComponent } from './component/todo/todo.component';
 import { UserComponent } from './component/user/user.component';
+import { TimelinesComponent } from './component/timelines/timelines.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UserComponent } from './component/user/user.component';
     DemoFormComponent,
     ProductComponent,
     TodoComponent,
-    UserComponent
+    UserComponent,
+    TimelinesComponent
   ],
   imports: [
     BrowserModule,
