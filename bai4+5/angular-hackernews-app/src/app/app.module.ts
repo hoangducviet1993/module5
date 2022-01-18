@@ -10,6 +10,7 @@ import { NameCardComponent } from './component/name-card/name-card.component';
 import { ProgressBarComponent } from './component/progress-bar/progress-bar.component';
 import { DemoFormComponent } from './component/demo-form/demo-form.component';
 import { ProductComponent } from './component/product/product.component';
+import { TodoComponent } from './component/todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProductComponent } from './component/product/product.component';
     NameCardComponent,
     ProgressBarComponent,
     DemoFormComponent,
-    ProductComponent
+    ProductComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,

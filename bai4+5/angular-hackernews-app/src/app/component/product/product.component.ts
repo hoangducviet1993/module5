@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Product} from "../../model/product";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-product',
@@ -26,11 +26,14 @@ export class ProductComponent implements OnInit {
     }
   ]
   formProduct = new FormGroup({
-      id: new FormControl(),
-      name: new FormControl(),
-      price: new FormControl(),
+      id: new FormControl(''),
+      name: new FormControl('',[Validators.required,Validators.email]),
+      price: new FormControl(''),
     }
   )
+  get user(){
+    return this.formProduct.get('name')
+  }
   constructor() {
   }
 
