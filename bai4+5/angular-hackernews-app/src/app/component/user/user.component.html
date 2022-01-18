@@ -1,0 +1,35 @@
+<div *ngFor="let user of lisUser">
+  <h1>{{user.email}} , {{user.country}},{{user.age}},{{user.gender}},{{user.phone}} </h1>
+</div>
+<form [formGroup]="formUser" (ngSubmit)="addNewUser()">
+  Email:
+  <br>
+  <input type="text" formControlName="email">
+  <div *ngIf="user&& user.invalid && user.dirty ">
+    <span> Email không hợp lệ</span>
+  </div>
+  <br>
+  Password:
+  <br>
+  <input type="password" formControlName="password">
+  <br>
+  Country:
+  <br>
+  <input type="text" formControlName="country">
+  <br>
+  Age:
+  <br>
+  <input type="number" formControlName="age">
+  <br>
+  Gender:
+  <br>
+  <input type="text" formControlName="gender">
+  <br>
+  Phone:
+  <br>
+  <input type="number" formControlName="phone">
+  <br>
+
+  <button [disabled]="formUser.invalid" >Submit</button>
+</form>
+
