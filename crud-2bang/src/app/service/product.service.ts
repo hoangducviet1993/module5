@@ -16,4 +16,16 @@ export class ProductService {
   getAll(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(API_URL);
   }
+
+  save(product: Product): Observable<Product> {
+    return this.httpClient.post<Product>(API_URL, product);
+  }
+
+  findById(id: String): Observable<Product> {
+    return this.httpClient.get<Product>(API_URL + `/${id}`)
+  }
+
+  update(id: String, product: Product) {
+    return this.httpClient.put<Product>(API_URL + `/${id}`, product)
+  }
 }

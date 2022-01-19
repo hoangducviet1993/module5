@@ -1,11 +1,21 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {ProductListComponent} from "./component/product-list/product-list.component";
+import {ProductCreateComponent} from "./component/product-create/product-create.component";
+import {ProductUpdateComponent} from "./component/product-update/product-update.component";
 
 const routes: Routes = [
   {
-    path:'product',
-    component:ProductListComponent
+    path: 'listProduct',
+    component: ProductListComponent
+  },
+  {
+    path: 'create',
+    component: ProductCreateComponent
+  },
+  {
+    path: 'update',
+    component: ProductUpdateComponent
   }
 ];
 
@@ -13,4 +23,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

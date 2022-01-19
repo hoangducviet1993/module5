@@ -17,6 +17,8 @@ export class ProductListComponent implements OnInit {
     this.productService.getAll().subscribe(result => {
       console.log(result);
       this.listProduct = result;
+    },loi=>{
+      console.log(loi);
     })
   }
 

@@ -1,0 +1,31 @@
+<h1>Thêm Sản Phẩm</h1>
+<form [formGroup]="formProduct" (ngSubmit)="saveProduct()">
+  <table>
+    <tr>
+      <td>Tên sản phẩm</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Giá Sản Phẩm:</td>
+      <td><input type="text" formControlName="price"></td>
+    </tr>
+    <tr>
+      <td>Số Lượng:</td>
+      <td><input type="text" formControlName="quantity"></td>
+    </tr>
+    <tr>
+      <td>Thể loại:</td>
+      <td>
+        <select formControlName="categoryId">
+          <option *ngFor="let c of listCategory" value="{{c.id}}">{{c.name}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button type="submit">Tạo mới</button>
+      </td>
+    </tr>
+  </table>
+</form>
