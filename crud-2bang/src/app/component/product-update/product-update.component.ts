@@ -34,6 +34,13 @@ export class ProductUpdateComponent implements OnInit {
       const id = param.get('id')
       // @ts-ignore
       this.productService.findById(id).subscribe(res => {
+        this.formProduct = new FormGroup({
+          // name: new FormControl(res.name),
+          // price: new FormControl(res.price),
+          // quantity: new FormControl(res.quantity),
+          categoryId: new FormControl(res.category?.id)
+        });
+
         console.log(res)
         this.product = res
       })
