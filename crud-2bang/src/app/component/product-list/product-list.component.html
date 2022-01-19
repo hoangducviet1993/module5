@@ -14,7 +14,8 @@
     <td> {{product.quantity}}</td>
     <td> {{product.category?.name}}</td>
     <td>
-      <button>Edit</button>
+      <a routerLink="{{product.id}}/update" style="margin-right: 15px">Edit</a>
+<!--      <button >Edit</button>-->
     </td>
     <td>
       <button>Delete</button>

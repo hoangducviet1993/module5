@@ -7,18 +7,23 @@ import {ProductUpdateComponent} from "./component/product-update/product-update.
 const routes: Routes = [
   {
     path: 'listProduct',
-    component: ProductListComponent
-  },
-  {
-    path: 'create',
-    component: ProductCreateComponent
-  },
-  {
-    path: 'update',
-    component: ProductUpdateComponent
+    children:[
+      {
+        path: '',
+        component:ProductListComponent
+      },
+      {
+        path: 'create',
+        component: ProductCreateComponent
+      },
+      {
+        path: ':id/update',
+        component: ProductUpdateComponent
+      }
+    ]
+
   }
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
