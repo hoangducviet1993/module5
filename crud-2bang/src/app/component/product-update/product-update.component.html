@@ -3,7 +3,7 @@
   <table>
     <tr>
       <td>Tên sản phẩm</td>
-      <td><input type="text" formControlName="name" [value]="product?.name" ></td>
+      <td><input type="text" formControlName="name" [value]="product?.name"></td>
     </tr>
     <tr>
       <td>Giá Sản Phẩm:</td>
@@ -11,13 +11,13 @@
     </tr>
     <tr>
       <td>Số Lượng:</td>
-      <td><input type="text" formControlName="quantity"[value]="product?.quantity"></td>
+      <td><input type="text" formControlName="quantity" [value]="product?.quantity"></td>
     </tr>
     <tr>
       <td>Thể loại:</td>
       <td>
         <select formControlName="categoryId">
-          <option [value]="product?.category?.id" >{{product?.category?.name}}</option>
+          <option [value]="product?.category?.id">{{product?.category?.name}}</option>
           <option *ngFor="let c of listCategory" value="{{c.id}}">{{c.name}}</option>
         </select>
       </td>
@@ -25,7 +25,8 @@
     <tr>
       <td></td>
       <td>
-        <button type="submit">Tạo mới</button>
+        <button type="submit">Sửa</button>
+        <button (click)="deleteProduct()">Xóa</button>
       </td>
     </tr>
   </table>

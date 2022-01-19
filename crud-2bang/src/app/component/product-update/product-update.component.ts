@@ -65,4 +65,13 @@ export class ProductUpdateComponent implements OnInit {
     });
   }
 
+  deleteProduct() {
+    // @ts-ignore
+    this.productService.delete(this.product.id).subscribe(result=>{
+      alert("Xóa Thành Công")
+      this.router.navigate(["listProduct"])
+    }, error => {
+      console.log(error);
+    })
+  }
 }

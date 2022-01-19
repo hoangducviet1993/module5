@@ -28,4 +28,7 @@ export class ProductService {
   update(id: String, product: Product) {
     return this.httpClient.put<Product>(API_URL + `/${id}`, product)
   }
+  delete(id:String){
+    return this.httpClient.delete<Product>(API_URL + `/${id}`)
+  }
 }

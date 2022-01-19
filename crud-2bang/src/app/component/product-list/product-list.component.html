@@ -1,5 +1,5 @@
 <h1>List Product</h1>
-
+<a routerLink="create" style="margin-right: 15px">Thêm Mới</a>
 <table border="1" cellpadding="5">
   <tr>
     <th>Name</th>
@@ -18,7 +18,7 @@
 <!--      <button >Edit</button>-->
     </td>
     <td>
-      <button>Delete</button>
+      <button (click)="deleteProduct(product.id)">Delete</button>
     </td>
   </tr>
 </table>
