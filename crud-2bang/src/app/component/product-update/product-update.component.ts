@@ -15,10 +15,11 @@ export class ProductUpdateComponent implements OnInit {
   // @ts-ignore
   product: Product;
   formProduct = new FormGroup({
+    id: new FormControl(''),
     name: new FormControl(''),
     price: new FormControl(''),
     quantity: new FormControl(''),
-    categoryId: new FormControl('')
+    category: new FormControl('')
   })
   listCategory: Category[] = [];
 
@@ -34,15 +35,16 @@ export class ProductUpdateComponent implements OnInit {
       const id = param.get('id')
       // @ts-ignore
       this.productService.findById(id).subscribe(res => {
+        // this.formProduct.setValue(res)
         this.formProduct = new FormGroup({
-          // name: new FormControl(res.name),
-          // price: new FormControl(res.price),
-          // quantity: new FormControl(res.quantity),
-          categoryId: new FormControl(res.category?.id)
+          id: new FormControl(res.id),
+          name: new FormControl(res.name),
+          price: new FormControl(res.price),
+          quantity: new FormControl(res.quantity),
+          category: new FormControl(res.category?.id)
         });
-
         console.log(res)
-        this.product = res
+        // this.product = res
       })
     })
     this.categoryService.getAll().subscribe(result => {
@@ -59,12 +61,12 @@ export class ProductUpdateComponent implements OnInit {
       price: this.formProduct.value.price,
       quantity: this.formProduct.value.quantity,
       category: {
-        id: this.formProduct.value.categoryId
+        id: this.formProduct.value.category
       }
     }
     console.log(product);
     // @ts-ignore
-    this.productService.update(this.product.id, product).subscribe(result => {
+    this.productService.update(this.formProduct.value.id, product).subscribe(result => {
       alert("Sửa Thành Công");
       this.router.navigate(["listProduct"])
     }, error => {
@@ -74,7 +76,7 @@ export class ProductUpdateComponent implements OnInit {
 
   deleteProduct() {
     // @ts-ignore
-    this.productService.delete(this.product.id).subscribe(result=>{
+    this.productService.delete(this.formProduct.value.id).subscribe(result=>{
       alert("Xóa Thành Công")
       this.router.navigate(["listProduct"])
     }, error => {
