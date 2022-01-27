@@ -17,7 +17,11 @@
 <!--            <button >Edit</button>-->
     </td>
     <td>
-<!--      <button (click)="deleteProduct(product.id)">Delete</button>-->
+      <a routerLink="{{book.id}}/view" style="margin-right: 15px">view</a>
+<!--            <button >Edit</button>-->
+    </td>
+    <td>
+      <button (click)="deleteBook(book.id)">Delete</button>
     </td>
   </tr>
 </table>

@@ -27,4 +27,13 @@ export class ListBookComponent implements OnInit {
       console.log(loi);
     })
   }
+  // @ts-ignore
+  deleteBook(id) {
+    this.bookService.delete(id).subscribe(result => {
+      alert("Xóa Thành Công")
+      this.loadAll();
+    }, error => {
+      console.log(error);
+    })
+  }
 }

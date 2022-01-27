@@ -19,7 +19,7 @@ const routes: Routes = [
     component:EditBookComponent
   },
   {
-    path: 'view',
+    path: ':id/view',
     component:ViewBookComponent
   },
 ];

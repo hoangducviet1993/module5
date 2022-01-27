@@ -54,5 +54,13 @@ export class EditBookComponent implements OnInit {
       console.log(error);
     });
   }
-
+  deleteBook() {
+    // @ts-ignore
+    this.bookService.delete(this.formBook.value.id).subscribe(result=>{
+      alert("Xóa Thành Công")
+      this.router.navigate(["book"])
+    }, error => {
+      console.log(error);
+    })
+  }
 }
