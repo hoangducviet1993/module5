@@ -1,0 +1,39 @@
+<h1>Thêm Sản Phẩm</h1>
+<form [formGroup]="formBook" (ngSubmit)="updateBook()">
+  <table>
+
+    <input type="hidden" formControlName="id">
+
+    <tr>
+      <td>Title</td>
+      <!--      <td><input type="text" formControlName="name" [value]="product?.name"></td>-->
+      <td><input type="text" formControlName="title"></td>
+    </tr>
+    <tr>
+      <td>Author:</td>
+      <!--      <td><input type="text" formControlName="price" [value]="product?.price"></td>-->
+      <td><input type="text" formControlName="author"></td>
+    </tr>
+    <tr>
+      <td>Description:</td>
+      <!--      <td><input type="text" formControlName="quantity" [value]="product?.quantity"></td>-->
+      <td><input type="text" formControlName="description"></td>
+    </tr>
+<!--    <tr>-->
+<!--      <td>Thể loại:</td>-->
+<!--      <td>-->
+<!--        <select formControlName="category">-->
+<!--          &lt;!&ndash;          <option [value]="product?.category?.id">{{product?.category?.name}}</option>&ndash;&gt;-->
+<!--          <option *ngFor="let c of listCategory" value="{{c.id}}">{{c.name}}</option>-->
+<!--        </select>-->
+<!--      </td>-->
+<!--    </tr>-->
+    <tr>
+      <td></td>
+      <td>
+        <button type="submit">Sửa</button>
+<!--        <button (click)="deleteProduct()">Xóa</button>-->
+      </td>
+    </tr>
+  </table>
+</form>
