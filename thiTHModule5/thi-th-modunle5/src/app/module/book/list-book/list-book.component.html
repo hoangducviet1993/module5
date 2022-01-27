@@ -5,21 +5,20 @@
     <th>#</th>
     <th>Title</th>
     <th>Author</th>
-    <th>Description</th>
   </tr>
   <tr *ngFor="let book of listBook">
     <td> {{book.id}}</td>
-    <td> {{book.title}}</td>
+    <td> <a routerLink="{{book.id}}/view" style="margin-right: 15px"> {{book.title}}</a></td>
     <td> {{book.author}}</td>
-    <td> {{book.description}}</td>
+<!--    <td> {{book.description}}</td>-->
     <td>
       <a routerLink="{{book.id}}/edit" style="margin-right: 15px">Edit</a>
 <!--            <button >Edit</button>-->
     </td>
-    <td>
-      <a routerLink="{{book.id}}/view" style="margin-right: 15px">view</a>
-<!--            <button >Edit</button>-->
-    </td>
+<!--    <td>-->
+<!--      <a routerLink="{{book.id}}/view" style="margin-right: 15px">view</a>-->
+<!--&lt;!&ndash;            <button >Edit</button>&ndash;&gt;-->
+<!--    </td>-->
     <td>
       <button (click)="deleteBook(book.id)">Delete</button>
     </td>

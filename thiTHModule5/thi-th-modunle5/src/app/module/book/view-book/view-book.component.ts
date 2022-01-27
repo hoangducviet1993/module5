@@ -24,17 +24,12 @@ export class ViewBookComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe(param=>{
+    this.activatedRoute.paramMap.subscribe(param => {
       const id = param.get('id')
       // @ts-ignore
-      this.bookService.findById(id).subscribe(res=>{
-        this.formBook = new FormGroup({
-          id: new FormControl(res.id),
-          title: new FormControl(res.title),
-          author: new FormControl(res.author),
-          description: new FormControl(res.description)
-        });
+      this.bookService.findById(id).subscribe(res => {
         console.log(res)
+        this.book = res
       })
     })
   }
